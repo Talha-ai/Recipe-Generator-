@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IngredientGuru</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://kit.fontawesome.com/309a2b0dfc.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="">
+  <div class="container">
+    <div class="wrapper m-10">
+      <div class="meal-search">
+        <!-- <h3 class="text-center">Search your ingredients</h3> -->
+        <div class="meal-search-box flex justify-center items-center">
+          <input type="text" name="" id="search_inp" class="border-2 pb-1 px-2 outline-none text-xl text-black"
+            placeholder="Search your recipies">
+          <button type="submit" id="search_btn" class=" bg-yellow-200 ml-7 rounded px-3.5 py-1.5 font-bold">
+            <!-- <i class="fa-solid fa-magnifying-glass cursor-pointer bg-yellow-200 py-2 px-2 ml-5 rounded-full"></i> -->
+            Search
+          </button>
+        </div>
+      </div>
+
+      <h2 class="title text-center mt-10 font-bold text-2xl hidden">Results:</h2>
+      <h2 class="title2 text-center mt-10 font-bold text-2xl hidden">No results found</h2>
+
+      <div class="meal-result grid grid-cols-1 lg:grid-cols-4 lg:gap-1 justify-items-center" id="meal-result">
+        <!-- <div class="meal py-10 h-full flex">
+          <div class="meal-item flex flex-col">
+            <div class="meal-img rounded overflow-hidden shadow-lg max-w-sm">
+              <img src="${meal.recipe.image}" alt="" class="w-full">
+            </div>
+
+            <div class="meal-name bg-white px-6 py-4 flex-1">
+              <h3 class="text-center font-bold text-xl mb-2">${meal.recipe.label}</h3>
+              <div class="grid grid-flow-col gap-5 pb-2 px-6">
+                <span
+                  class="bg-gray-200 rounded-full px-3 py-1 text-sm font-base mb-2 text-center">#${meal.recipe.cuisineType}</span>
+                <span
+                  class="bg-gray-200 rounded-full px-3 py-1 text-sm font-base mb-2 text-center">#${meal.recipe.dishType}</span>
+              </div>
+              <a href="#" class="recipie-btn flex justify-center bg-yellow-200 mx-10 mt-5 rounded-xl">Get recipe</a>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+
+      <div class="meal-details">
+        <button type="button" class="close-btn" id="close-res-btn">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <div class="meal-content bg-white p-10 rounded-xl w-9/12 mx-auto shadow-3xl">
+
+          <div class="meal-wrapper flex justify-around">
+            <div class="recipe-meal-img">
+              <img src="butter.jpeg" alt="" class=" mt-10 w-80">
+              <a href="#" target="_blank"
+                class="flex justify-center mt-10 text-lg bg-gray-300 rounded-full w-9/12 mx-auto py-1">View
+                Full Recipe <i class="fa-solid fa-arrow-up-right-from-square my-auto pl-2"></i></a>
+            </div>
+          </div>
+          <div class="meal-ingredients">
+            <h2 class="recipe-title font-bold text-4xl text-center">Butter</h2>
+            <div class="recipe-instruct w-96">
+              <h3 class="text-lg text-gray-500 font-semibold">Ingredients:</h3>
+              <ul id="ingredient-list" class="text-gray-700"></ul>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

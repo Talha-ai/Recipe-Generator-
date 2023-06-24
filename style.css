@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+/* .meal-item{
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+} */
+
+
+/* / */
+
+.meal-details{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  width: 90%;
+  height: 90%;
+  display: none;
+  padding: 2rem 0;
+}
+
+.showRecipe{
+  display: block;
+}
+
+.meal-content {
+  position: relative;
+} 
+
+ .close-btn {
+  position: absolute;
+  top: 38px;
+  right: 153px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.popup-open {
+  overflow: hidden;
+}
+
+.popup-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(4px); 
+}
+
+body{
+  background-size: contain;
+  background-color: rgb(132, 132, 132);
+}
+
+.meal:hover{
+  transform: scale(1.02);
+}
+
+.meal{
+  transition: all 0.5s;
+}
+
+.food-img{
+  max-width: 250px;
+  object-fit: cover;
+}
+
+.meal-item{
+  height: 25rem;
+  width:  15.6rem;
+}
+.name, .cuisine-type, .dish-type{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#search_inp{
+    width: 30%;
+    background: transparent;
+}
+
+#search_inp{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: yellow;
+  height: 30px;
+  outline: none;
+}
+
+#search_inp::placeholder {
+  color: rgba(0, 0, 0, 0.773);
+}
+.ingre-title{
+  margin-top: 100px;
+}
+
+.res{
+  width: 75%;
+}
+.lala {
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+
+@media (max-width: 768px) {
+
+  #search_inp{
+    width: 75%;
+}
+
+  .meal-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrupper{
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+    width: 100%;
+  }
+
+  .close-btn {
+    top: 40px;
+    right: 60px;
+  }
+
+  .meal-content{
+
+   position: relative;
+   bottom: 17px;
+
+  }
+
+  .recipe-title{
+    font-size: 30px;
+    width: 12ch;
+    text-align:center;
+    margin-top: 20px;
+  } 
+  
+  #ingredient-list{
+    width: 23ch;
+  }
+  .recipe-meal-img {
+    margin-top: auto;
+  }
+.recipe-img-yum{
+  max-width: 100%;
+  height: auto;  
+  margin-top: 0;
+}
+
+.res{
+  right: 0;
+  width: 10%;
+}
+
+.recipe-link a{
+  padding: 0 100px;
+  font-size: 16px;
+}
+}
