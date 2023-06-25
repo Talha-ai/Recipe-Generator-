@@ -570,6 +570,11 @@ video {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
@@ -579,16 +584,16 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
+.ml-1 {
+  margin-left: 0.25rem;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
 }
 
 .mt-5 {
@@ -691,6 +696,11 @@ video {
   border-width: 2px;
 }
 
+.bg-\[\#F0EDD4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 237 212 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -711,8 +721,21 @@ video {
   background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
+.bg-yellow-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 252 232 / var(--tw-bg-opacity));
+}
+
 .p-10 {
   padding: 2.5rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
 }
 
 .px-2 {
@@ -725,11 +748,6 @@ video {
   padding-right: 0.75rem;
 }
 
-.px-3\.5 {
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
-}
-
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -740,19 +758,9 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-1\.5 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-}
-
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .py-4 {
@@ -786,6 +794,16 @@ video {
   line-height: 2.5rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -805,13 +823,17 @@ video {
   font-weight: 700;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-semibold {
   font-weight: 600;
 }
 
-.text-black {
+.text-\[\#674747\] {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(103 71 71 / var(--tw-text-opacity));
 }
 
 .text-gray-500 {
@@ -825,7 +847,7 @@ video {
 }
 
 .shadow-3xl {
-  --tw-shadow: 0 0 10px rgb(0, 0, 0);
+  --tw-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   --tw-shadow-colored: 0 0 10px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -848,13 +870,14 @@ video {
   font-family: "poppins", sans-serif;
 }
 
-/* .meal-item{
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
-} */
-
-/* / */
+body{
+  background-image: url(../addfood.jpg);
+  height: 596px;
+  background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  url(../login.webp) no-repeat;
+  background-size: cover;
+  background-color: #f8fbf5;
+}
 
 .meal-details{
   position: fixed;
@@ -872,18 +895,25 @@ video {
   display: block;
 }
 
-.meal-content {
+.meal-content{
   position: relative;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.meal-content.pop{
+  opacity: 1;
+  transform: scale(1);
 }
 
 .close-btn {
   position: absolute;
-  top: 38px;
-  right: 153px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10;
 }
 
 .popup-open {
@@ -897,13 +927,65 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-body{
-  background-size: contain;
-  background-color: rgb(132, 132, 132);
+.search-box{
+  height: 60px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgb(240, 240, 240);
+  border-radius: 100px;
+  border: 1px solid gray;
+}
+
+/* .meal-result {
+  background-color: #e3e3e3;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 25px;
+} */
+
+.para{
+  width: 15ch;
+  margin-left: 220px;
+  color: rgb(62, 38, 6);
+}
+
+.smol-para{
+  margin-left: 220px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.meal-search{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 200px;
+}
+
+.up{
+  top:0;
+}
+
+.show-page {
+  display: block;
+}
+
+.search-box.active,
+.search-box:hover{
+  border: none;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .meal:hover{
@@ -920,6 +1002,17 @@ body{
      object-fit: cover;
 }
 
+.recipe-btn {
+  background-color: #ECCDB4;
+  border-radius: 10px;
+  padding: 8px 0;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-btn:hover{
+  background-color: #d2b69f;
+}
+
 .meal-item{
   height: 25rem;
   width:  15.6rem;
@@ -931,23 +1024,25 @@ body{
   white-space: nowrap;
 }
 
+.cuisine-type, .dish-type{
+  background-color: #eccdb476;
+}
+
 #search_inp{
-  width: 30%;
-  background: transparent;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: yellow;
+  border: none;
+  border-color: #ECCDB4;
   height: 30px;
   outline: none;
+  width: 83%;
+  background: transparent;
 }
 
 #search_inp::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.773);
+  color: rgba(0, 0, 0, 0.46);
 }
 
 #search_inp::placeholder {
-  color: rgba(0, 0, 0, 0.773);
+  color: rgba(0, 0, 0, 0.46);
 }
 
 .ingre-title{
@@ -956,6 +1051,11 @@ body{
 
 .res{
   width: 75%;
+  transition: background-color 0.1s;
+}
+
+.res:hover{
+  background-color: rgb(192, 192, 192);
 }
 
 .lala {
@@ -965,8 +1065,42 @@ body{
 }
 
 @media (max-width: 768px) {
-  #search_inp{
-    width: 75%;
+  body{
+    position: relative;
+    top: -150px;
+    background-size: contain;
+  }
+
+  .para{
+    width: 10ch;
+    font-size: 50px;
+    margin: 0;
+  }
+
+  .smol-para{
+    margin: 0;
+    margin: 20px 0;
+  }
+
+  .meal-search{
+    flex-direction: column ;
+  }
+
+  .search-box{
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .up{
+    margin-top:200px;
+  }
+
+  #search_inp::-moz-placeholder{
+    font-size: 16px;
+  }
+
+  #search_inp::placeholder{
+    font-size: 16px;
   }
 
   .meal-wrapper {
@@ -981,14 +1115,10 @@ body{
     width: 100%;
   }
 
-  .close-btn {
-    top: 40px;
-    right: 60px;
-  }
-
   .meal-content{
     position: relative;
     bottom: 17px;
+    width: 100%;
   }
 
   .recipe-title{
@@ -1010,6 +1140,7 @@ body{
     max-width: 100%;
     height: auto;
     margin-top: 0;
+    margin: 0 auto;
   }
 
   .res{
@@ -1020,6 +1151,10 @@ body{
   .recipe-link a{
     padding: 0 100px;
     font-size: 16px;
+  }
+
+  .meal-ingredients{
+    margin: 0 auto;
   }
 }
 

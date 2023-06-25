@@ -4,27 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IngredientGuru</title>
+  <title>Bhukkard</title>
+  <link rel="icon" type="image/x-icon" href="CPLogo.webp">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://kit.fontawesome.com/309a2b0dfc.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="">
+<body>
   <div class="container">
     <div class="wrapper m-10">
-      <div class="meal-search">
-        <!-- <h3 class="text-center">Search your ingredients</h3> -->
-        <div class="meal-search-box flex justify-center items-center">
-          <input type="text" name="" id="search_inp" class="border-2 pb-1 px-2 outline-none text-xl text-black"
+      <div class="meal-search mt-14">
+        <div class="motto">
+          <p class="para text-6xl font-bold">The Easiest Way To Make Your Favorite Meal <br></p>
+          <p class="smol-para text-base text-gray-500 font-normal">Discover
+            over
+            1000 recipes at your fingertips with our best recipe collection. <br> We're here to help you find the
+            easiest way
+            to cook!</p>
+        </div>
+        <div class="search-box flex justify-center items-center">
+          <input type="text" name="" id="search_inp" class="border-2 pb-1 px-2 outline-none text-xl text-[#674747]"
             placeholder="Search your recipies">
-          <button type="submit" id="search_btn" class=" bg-yellow-200 ml-7 rounded px-3.5 py-1.5 font-bold">
-            <!-- <i class="fa-solid fa-magnifying-glass cursor-pointer bg-yellow-200 py-2 px-2 ml-5 rounded-full"></i> -->
-            Search
+          <button type="submit" id="search_btn" class="">
+            <i class="fa-solid fa-magnifying-glass cursor-pointer bg-[#F0EDD4] p-2.5 ml-1 rounded-full"></i>
           </button>
         </div>
       </div>
 
-      <h2 class="title text-center mt-10 font-bold text-2xl hidden">Results:</h2>
+      <h2 class="title text-center my-10 font-bold text-2xl hidden">Your search results:</h2>
       <h2 class="title2 text-center mt-10 font-bold text-2xl hidden">No results found</h2>
 
       <div class="meal-result grid grid-cols-1 lg:grid-cols-4 lg:gap-1 justify-items-center" id="meal-result">
@@ -51,12 +58,9 @@
 
 
       <div class="meal-details">
-        <button type="button" class="close-btn" id="close-res-btn">
-          <i class="fa-solid fa-xmark text-xl"></i>
-        </button>
-        <div class="meal-content bg-white p-10 rounded-xl w-9/12 mx-auto shadow-3xl">
+        <div class="meal-content bg-yellow-50 p-10 rounded-xl w-9/12 mx-auto shadow-3xl">
 
-          <div class="meal-wrapper flex justify-around">
+          <!-- <div class="meal-wrapper flex justify-around">
             <div class="recipe-meal-img">
               <img src="butter.jpeg" alt="" class=" mt-10 w-80">
               <a href="#" target="_blank"
@@ -69,15 +73,14 @@
             <div class="recipe-instruct w-96">
               <h3 class="text-lg text-gray-500 font-semibold">Ingredients:</h3>
               <ul id="ingredient-list" class="text-gray-700"></ul>
-
-
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
 

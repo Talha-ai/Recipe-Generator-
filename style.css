@@ -11,14 +11,16 @@
   font-family: "poppins", sans-serif;
 }
 
-/* .meal-item{
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
-} */
 
+body{
+  background-image: url(../addfood.jpg);
+  height: 596px;
+  background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  url(../login.webp) no-repeat;
+  background-size: cover; 
+  background-color: #f8fbf5;
+}
 
-/* / */
 
 .meal-details{
   position: fixed;
@@ -36,18 +38,25 @@
   display: block;
 }
 
-.meal-content {
+.meal-content{
   position: relative;
-} 
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.meal-content.pop{
+  opacity: 1;
+  transform: scale(1);
+}
 
  .close-btn {
   position: absolute;
-  top: 38px;
-  right: 153px;
+  top: 10px;
+  right: 10px;
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 10;
 }
 
 .popup-open {
@@ -61,12 +70,64 @@
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(4px); 
+  backdrop-filter: blur(6px); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-body{
-  background-size: contain;
-  background-color: rgb(132, 132, 132);
+
+.search-box{
+  height: 60px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: rgb(240, 240, 240);
+  border-radius: 100px;
+  border: 1px solid gray;
+}
+
+/* .meal-result {
+  background-color: #e3e3e3;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 25px;
+} */
+
+.para{
+  width: 15ch;
+  margin-left: 220px;
+  color: rgb(62, 38, 6);
+}
+
+.smol-para{
+  margin-left: 220px;
+  margin-top: 20px;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.meal-search{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 200px;
+}
+
+.up{
+  top:0;
+}
+.show-page {
+  display: block;
+}
+.search-box.active,
+.search-box:hover{
+  border: none;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .meal:hover{
@@ -81,6 +142,17 @@ body{
   max-width: 250px;
   object-fit: cover;
 }
+.recipe-btn {
+  background-color: #ECCDB4;
+  border-radius: 10px;
+  padding: 8px 0;
+  transition: background-color 0.3s ease;
+}
+
+.recipe-btn:hover{
+  background-color: #d2b69f;
+}
+
 
 .meal-item{
   height: 25rem;
@@ -91,23 +163,22 @@ body{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.cuisine-type, .dish-type{
+  background-color: #eccdb476;
 
-#search_inp{
-    width: 30%;
-    background: transparent;
 }
 
 #search_inp{
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-color: yellow;
+  border: none;
+  border-color: #ECCDB4;
   height: 30px;
   outline: none;
+  width: 83%;
+  background: transparent;
 }
 
 #search_inp::placeholder {
-  color: rgba(0, 0, 0, 0.773);
+  color: rgba(0, 0, 0, 0.46);
 }
 .ingre-title{
   margin-top: 100px;
@@ -115,18 +186,50 @@ body{
 
 .res{
   width: 75%;
+  transition: background-color 0.1s;
 }
+
+.res:hover{
+  background-color: rgb(192, 192, 192);
+}
+
 .lala {
   overflow: hidden;
   overflow-y: auto;
   max-height: 250px;
 }
 
-
 @media (max-width: 768px) {
+  body{
+    position: relative;
+    top: -150px;
+    background-size: contain;
+  }
 
-  #search_inp{
-    width: 75%;
+  .para{
+    width: 10ch;
+    font-size: 50px;
+    margin: 0;
+  }
+  .smol-para{
+    margin: 0;
+    margin: 20px 0;
+  }
+
+  .meal-search{
+      flex-direction: column ;
+  }
+
+  .search-box{
+    width: 100%;
+    padding: 0 15px;
+}
+.up{
+  margin-top:200px;
+}
+
+#search_inp::placeholder{
+  font-size: 16px;
 }
 
   .meal-wrapper {
@@ -141,16 +244,10 @@ body{
     width: 100%;
   }
 
-  .close-btn {
-    top: 40px;
-    right: 60px;
-  }
-
   .meal-content{
-
    position: relative;
    bottom: 17px;
-
+   width: 100%;
   }
 
   .recipe-title{
@@ -170,6 +267,7 @@ body{
   max-width: 100%;
   height: auto;  
   margin-top: 0;
+  margin: 0 auto;
 }
 
 .res{
@@ -180,5 +278,8 @@ body{
 .recipe-link a{
   padding: 0 100px;
   font-size: 16px;
+}
+.meal-ingredients{
+  margin: 0 auto;
 }
 }
